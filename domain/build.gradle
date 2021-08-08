@@ -3,5 +3,14 @@ plugins {
 }
 
 dependencies {
-    testImplementation 'junit:junit:4.13.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$version_kotlin"
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version_coroutines"
+
+    implementation "com.michael-bull.kotlin-result:kotlin-result:$version_result"
+    implementation "com.michael-bull.kotlin-result:kotlin-result-coroutines:$version_result"
+
+    implementation "javax.inject:javax.inject:$version_javax"
+
+    testImplementation "junit:junit:$version_junit"
 }
