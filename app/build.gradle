@@ -46,6 +46,14 @@ android {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
+    kapt {
+        javacOptions {
+            // These options are normally set automatically via the Hilt Gradle plugin, but we
+            // set them manually to workaround a bug in the Kotlin 1.5.20
+            option("-Adagger.fastInit=ENABLED")
+            option("-Adagger.hilt.android.internal.disableAndroidSuperclassValidation=true")
+        }
+    }
 }
 
 dependencies {
@@ -59,15 +67,24 @@ dependencies {
     implementation "androidx.compose.ui:ui:$version_compose"
     implementation "androidx.compose.material:material:$version_compose"
     implementation "androidx.compose.ui:ui-tooling-preview:$version_compose"
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$version_lifecycle"
     implementation "androidx.activity:activity-compose:$version_appcompat"
+
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$version_lifecycle"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$version_lifecycle"
+//    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$version_compose"
+
+    implementation "androidx.fragment:fragment-ktx:$version_fragment"
+    implementation "androidx.navigation:navigation-fragment-ktx:$version_navigation"
+    implementation "androidx.navigation:navigation-ui-ktx:$version_navigation"
+//    implementation "androidx.navigation:navigation-compose:2.4.0-alpha06"
+
+    implementation "com.google.accompanist:accompanist-insets:$version_insets"
+    implementation "com.google.accompanist:accompanist-insets-ui:$version_insets"
 
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version_coroutines"
 
     implementation "com.michael-bull.kotlin-result:kotlin-result:$version_result"
     implementation "com.michael-bull.kotlin-result:kotlin-result-coroutines:$version_result"
-
-    implementation "com.airbnb.android:mavericks:$version_mavericks"
 
     implementation "com.google.dagger:hilt-android:$version_hilt"
     kapt "com.google.dagger:hilt-android-compiler:$version_hilt"
