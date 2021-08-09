@@ -1,5 +1,7 @@
 package com.tinkooladik.tvshows.base
 
+import com.tinkooladik.tvshows.common.UiError
+
 sealed class Async<out V>
 
 object Idle : Async<Nothing>(), Incomplete
@@ -25,35 +27,35 @@ val <V> Async<V>.value: V?
 
 interface Incomplete
 
-inline fun <V, E> Async<V>.onSuccess(action: (V) -> Unit): Async<V> {
+inline fun <V> Async<V>.onSuccess(action: (V) -> Unit): Async<V> {
     if (this is Success) {
         action(value)
     }
     return this
 }
 
-inline fun <V, E> Async<V>.onFailure(action: (UiError) -> Unit): Async<V> {
+inline fun <V> Async<V>.onFailure(action: (UiError) -> Unit): Async<V> {
     if (this is Fail) {
         action(error)
     }
     return this
 }
 
-inline fun <V, E> Async<V>.onLoading(action: () -> Unit): Async<V> {
+inline fun <V> Async<V>.onLoading(action: () -> Unit): Async<V> {
     if (this is Loading) {
         action()
     }
     return this
 }
 
-inline fun <V, E> Async<V>.onComplete(action: () -> Unit): Async<V> {
+inline fun <V> Async<V>.onComplete(action: () -> Unit): Async<V> {
     if (this is Complete) {
         action()
     }
     return this
 }
 
-inline fun <V, E> Async<V>.onIncomplete(action: () -> Unit): Async<V> {
+inline fun <V> Async<V>.onIncomplete(action: () -> Unit): Async<V> {
     if (this is Incomplete) {
         action()
     }

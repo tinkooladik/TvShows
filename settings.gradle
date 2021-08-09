@@ -9,3 +9,5 @@ rootProject.name = "TvShows"
 include ':app'
 include ':domain'
 include ':data'
+include ':app-compose'
+include ':common'
