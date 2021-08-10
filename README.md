@@ -2,6 +2,10 @@
 
 This pet project is way far from being finished.
 
+Please don't pay much attention to `app-compose` module, there is no progress there yet.
+
+The UI of xml `app` module is going to be much more sophisticated too.
+
 ------
 
 `app` module - traditional xml presentation layer
