@@ -12,6 +12,8 @@ The UI of xml `app` module is going to be much more sophisticated too.
 
 `app-compose` module - compose presentation layer. so far no progress on this part :(
 
+`common` module - just a place to put all the common stuff used by `app` and `app-compose` modules
+
 ------
 
 Going to use:
