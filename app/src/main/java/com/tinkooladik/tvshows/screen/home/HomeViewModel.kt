@@ -5,8 +5,7 @@ import com.github.michaelbull.result.onFailure
 import com.github.michaelbull.result.onSuccess
 import com.tinkooladik.tvshows.base.*
 import com.tinkooladik.tvshows.common.NoData
-import com.tinkooladik.tvshows.domain.actor.Actor
-import com.tinkooladik.tvshows.domain.actor.FetchAllActorsUseCase
+import com.tinkooladik.tvshows.domain.show.FetchAllShowsUseCase
 import com.tinkooladik.tvshows.domain.show.Show
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -16,28 +15,27 @@ import javax.inject.Inject
 @Immutable
 data class HomeState(
     val shows: Async<List<Show>> = Idle,
-    val actors: Async<List<Actor>> = Idle,
 ) : UiState
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val fetchAllActorsUseCase: FetchAllActorsUseCase
+    private val fetchAllShowsUseCase: FetchAllShowsUseCase,
 ) : BaseViewModel<HomeState, Nothing>() {
 
     init {
-        fetchActors()
+        fetchShows()
     }
 
     override fun createInitialState() = HomeState()
 
-    private fun fetchActors() {
+    private fun fetchShows() {
         viewModelScope.launch {
-            fetchAllActorsUseCase.invoke()
-                .onSuccess { actors ->
-                    setState { copy(actors = Complete.withSuccess(actors)) }
+            fetchAllShowsUseCase.invoke()
+                .onSuccess { shows ->
+                    setState { copy(shows = Complete.withSuccess(shows)) }
                 }.onFailure { error ->
                     //TODO map error
-                    setState { copy(actors = Complete.withError(NoData)) }
+                    setState { copy(shows = Complete.withError(NoData)) }
                 }
         }
     }

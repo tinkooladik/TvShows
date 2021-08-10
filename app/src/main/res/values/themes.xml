@@ -12,6 +12,8 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <!--TODO add support for white theme -->
+        <item name="android:colorBackground">@color/background</item>
     </style>
 
     <style name="Theme.TvShows.NoActionBar">
@@ -22,4 +24,41 @@
     <style name="Theme.TvShows.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.TvShows.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Text">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Header" parent="Text">
+        <item name="android:textSize">@dimen/h1</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Header2" parent="Text">
+        <item name="android:textSize">@dimen/h2</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/purple_200</item>
+    </style>
+
+    <style name="Text.Header3" parent="Text">
+        <item name="android:textSize">@dimen/h3</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/purple_200</item>
+    </style>
+
+    <style name="Text.Body" parent="Text">
+        <item name="android:textSize">@dimen/body</item>
+        <item name="android:textColor">@color/gray_light</item>
+    </style>
+
+    <style name="Text.Body2" parent="Text">
+        <item name="android:textSize">@dimen/body2</item>
+        <item name="android:textColor">@color/gray_light</item>
+    </style>
+
+    <style name="SmallChip" parent="Widget.MaterialComponents.Chip.Entry">
+        <item name="chipCornerRadius">15dp</item>
+        <item name="android:textSize">11sp</item>
+    </style>
 </resources>
