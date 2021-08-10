@@ -5,4 +5,6 @@ enum class Genre {
     TeenDrama,
     Drama,
     Horror,
+    Thriller,
+    Crime
 }

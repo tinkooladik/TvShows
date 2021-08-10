@@ -1,4 +1,4 @@
-package com.tinkooladik.tvshows.domain.actor
+package com.tinkooladik.tvshows.domain.show
 
 import com.github.michaelbull.result.Result
 import com.tinkooladik.tvshows.domain.common.AppDispatchers
@@ -8,15 +8,15 @@ import com.tinkooladik.tvshows.domain.common.ResultUseCase
 import javax.inject.Inject
 
 /**
- * Fetch all actors
+ * Fetch all available tv shows
  */
-class FetchAllActorsUseCase @Inject constructor(
-    private val source: ActorsRepository,
+class FetchAllShowsUseCase @Inject constructor(
+    private val source: ShowsRepository,
     dispatchers: AppDispatchers,
     errorInterceptor: ErrorInterceptor
-) : ResultUseCase<List<Actor>>(dispatchers.io, errorInterceptor) {
+) : ResultUseCase<List<Show>>(dispatchers.io, errorInterceptor) {
 
-    override suspend fun execute(): Result<List<Actor>, AppException> {
+    override suspend fun execute(): Result<List<Show>, AppException> {
         return source.fetchAll()
     }
 }

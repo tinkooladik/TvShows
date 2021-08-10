@@ -3,7 +3,7 @@ package com.tinkooladik.tvshows.domain.actor
 import com.github.michaelbull.result.Result
 import com.tinkooladik.tvshows.domain.common.AppException
 
-interface ActorDataSource {
+interface ActorsRepository {
 
     suspend fun fetchAll(): Result<List<Actor>, AppException>
 
