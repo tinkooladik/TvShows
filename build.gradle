@@ -19,6 +19,7 @@ buildscript {
         version_result ='1.1.9'
         version_hilt ='2.35.1'
         version_timber ='4.7.1'
+        version_glide ='4.12.0'
         version_javax ='1'
         version_junit ='4.13.2'
         version_espresso ='3.4.0'
@@ -29,8 +30,9 @@ buildscript {
     }
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.0"
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.10'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$version_kotlin"
         classpath 'com.google.dagger:hilt-android-gradle-plugin:2.38.1'
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$version_navigation"
     }
 }
 

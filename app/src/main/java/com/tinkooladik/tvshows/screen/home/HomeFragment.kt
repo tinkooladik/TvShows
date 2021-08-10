@@ -4,12 +4,15 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import com.tinkooladik.tvshows.R
 import com.tinkooladik.tvshows.base.BaseFragment
 import com.tinkooladik.tvshows.base.onSuccess
 import com.tinkooladik.tvshows.databinding.FragmentHomeBinding
+import com.tinkooladik.tvshows.domain.show.Show
+import com.tinkooladik.tvshows.extentions.addHorizontalSpacingItemDecoration
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
-import timber.log.Timber
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
@@ -21,13 +24,25 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val adapter = ShowsAdapter(::onShowItemClicked)
+        binding.shows.adapter = adapter
+        binding.shows.addHorizontalSpacingItemDecoration(R.dimen.spacing_small)
+
         //TODO extract this to the base fragment
         lifecycleScope.launchWhenStarted {
             viewModel.uiState.collect { state ->
-                state.actors.onSuccess {
-                    Timber.e("received actors: ${it.map { it.name }}")
+                state.shows.onSuccess {
+                    adapter.submitList(it)
                 }
             }
         }
+    }
+
+    private fun onShowItemClicked(item: Show) {
+        findNavController().navigate(
+            HomeFragmentDirections.actionHomeFragmentToShowDetailsFragment(
+                item.id
+            )
+        )
     }
 }

@@ -1,8 +1,8 @@
 package com.tinkooladik.tvshows.domain.model
 
 @JvmInline
-value class Rating(private val r: Double) {
+value class Rating(val value: Double) {
     init {
-        require(r in 0.0..10.0)
+        require(value in 0.0..10.0)
     }
 }

@@ -16,4 +16,5 @@ data class Show(
     val rating: Rating,
     val seasons: Int,
     val episodes: Int,
+    val imageUrl: String,
 )

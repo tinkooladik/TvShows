@@ -37,6 +37,7 @@ dependencies {
     api "androidx.lifecycle:lifecycle-viewmodel-ktx:$version_lifecycle"
 
     api "androidx.fragment:fragment-ktx:$version_fragment"
+    api "androidx.navigation:navigation-runtime-ktx:$version_navigation"
     api "androidx.navigation:navigation-fragment-ktx:$version_navigation"
     api "androidx.navigation:navigation-ui-ktx:$version_navigation"
 

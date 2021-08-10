@@ -16,25 +16,25 @@ object StubData {
             id = 0,
             name = "Úrsula Corberó",
             birth = LocalDate.of(1989, 1, 9),
-            picUrl = "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTV_IdsV5Oel7GhWGs-MfJNhsh1RsKOtwkxrK4csIjuFjAhTLGK"
+            imageUrl = "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTV_IdsV5Oel7GhWGs-MfJNhsh1RsKOtwkxrK4csIjuFjAhTLGK"
         ),
         Actor(
             id = 1,
             name = "Álvaro Morte",
             birth = LocalDate.of(1976, 2, 23),
-            picUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW32Qfsda8w5O28bc9-GX3u_w-9hqJCPVCOvgNV_W9XEv9PziO"
+            imageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW32Qfsda8w5O28bc9-GX3u_w-9hqJCPVCOvgNV_W9XEv9PziO"
         ),
         Actor(
             id = 2,
             name = "Miguel Herrán",
             birth = LocalDate.of(1996, 4, 25),
-            picUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPZ-ykwJvwikkP3V1PJ4zPNed-Dwe5IKtzNDGSCMag-jfqc_9M"
+            imageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPZ-ykwJvwikkP3V1PJ4zPNed-Dwe5IKtzNDGSCMag-jfqc_9M"
         ),
         Actor(
             id = 3,
             name = "Jaime Lorente",
             birth = LocalDate.of(1991, 12, 12),
-            picUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThZWJx32e7vvzK-_Ok8rl2M6ZtEKhiHz9-uAAJcMVwAKPabKAJ"
+            imageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThZWJx32e7vvzK-_Ok8rl2M6ZtEKhiHz9-uAAJcMVwAKPabKAJ"
         ),
     )
 
@@ -43,13 +43,13 @@ object StubData {
             id = 4,
             name = "Arón Piper",
             birth = LocalDate.of(1997, 3, 29),
-            picUrl = "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRbNry4peoUQzDZQZdjYani-YzGC-iBd65G1nqFc8JmUnLCebp6"
+            imageUrl = "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRbNry4peoUQzDZQZdjYani-YzGC-iBd65G1nqFc8JmUnLCebp6"
         ),
         Actor(
             id = 5,
             name = "Itzan Escamilla",
             birth = LocalDate.of(1997, 10, 31),
-            picUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr5JOBhJM2PnCIWnXFIbB5TxX5-dNgX7RPkk64huusYyvbcexp"
+            imageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr5JOBhJM2PnCIWnXFIbB5TxX5-dNgX7RPkk64huusYyvbcexp"
         ),
     )
 
@@ -65,7 +65,8 @@ object StubData {
             genres = listOf(Genre.Thriller, Genre.Crime, Genre.Drama),
             rating = Rating(8.3),
             seasons = 2,
-            episodes = 31
+            episodes = 31,
+            imageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAD_Ll60VwQMFMYh28vheB_dI3Xud-wlVYBw&usqp=CAU"
         ),
         Show(
             id = 1,
@@ -76,7 +77,8 @@ object StubData {
             genres = listOf(Genre.TeenDrama, Genre.Thriller),
             rating = Rating(7.5),
             seasons = 4,
-            episodes = 32
+            episodes = 32,
+            imageUrl = "https://citaty.info/files/posters/214160.jpg"
         )
     )
 }
