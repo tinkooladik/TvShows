@@ -1,5 +1,15 @@
 # TvShows
 
+This pet project is way far from being finished.
+
+------
+
+`app` module - traditional xml presentation layer
+
+`app-compose` module - compose presentation layer. so far no progress on this part :(
+
+------
+
 Going to use:
 * Compose
 * Proto DataStore
