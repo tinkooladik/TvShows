@@ -6,4 +6,5 @@ data class Actor(
     val id: Long,
     val name: String,
     val birth: LocalDate,
+    val picUrl: String,
 )

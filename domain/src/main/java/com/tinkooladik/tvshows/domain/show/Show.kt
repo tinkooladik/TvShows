@@ -10,9 +10,10 @@ data class Show(
     val id: Long,
     val title: String,
     val releaseDate: LocalDate,
-    val director: String,
     val actors: List<Actor>,
     val country: Country,
-    val genre: Genre,
-    val rating: Rating
+    val genres: List<Genre>,
+    val rating: Rating,
+    val seasons: Int,
+    val episodes: Int,
 )
