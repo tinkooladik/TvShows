@@ -32,6 +32,7 @@ class ShowsAdapter(
 
             binding.title.text = item.title
             binding.releaseDate.text = item.releaseDate.format(dateFormat)
+            binding.rating.text = item.rating.value.toString()
 
             Glide.with(binding.pic).load(item.imageUrl).into(binding.pic)
         }

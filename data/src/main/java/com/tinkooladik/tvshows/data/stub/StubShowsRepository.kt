@@ -28,7 +28,7 @@ class StubShowsRepository @Inject constructor() : ShowsRepository {
 
     override suspend fun fetch(id: Long): Result<Show, AppException> {
         val show = data.firstOrNull { it.id == id }
-        delay(200)
+        delay(400)
         return show?.let { Ok(it) } ?: Err(ActorNotFoundException())
     }
 

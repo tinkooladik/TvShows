@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.tinkooladik.tvshows.R
 import com.tinkooladik.tvshows.base.BaseFragment
 import com.tinkooladik.tvshows.base.onSuccess
@@ -38,6 +39,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
     private fun onShowItemClicked(item: Show) {
-
+        findNavController().navigate(
+            HomeFragmentDirections.actionHomeFragmentToShowDetailsFragment(
+                item.id
+            )
+        )
     }
 }
