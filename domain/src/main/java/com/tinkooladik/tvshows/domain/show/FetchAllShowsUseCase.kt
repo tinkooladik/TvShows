@@ -7,6 +7,9 @@ import com.tinkooladik.tvshows.domain.common.ErrorInterceptor
 import com.tinkooladik.tvshows.domain.common.ResultUseCase
 import javax.inject.Inject
 
+/**
+ * Fetch all available tv shows
+ */
 class FetchAllShowsUseCase @Inject constructor(
     private val source: ShowsRepository,
     dispatchers: AppDispatchers,

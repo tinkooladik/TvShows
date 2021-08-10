@@ -2,9 +2,11 @@ package com.tinkooladik.tvshows.common.di
 
 import com.tinkooladik.tvshows.data.LoggingErrorInterceptor
 import com.tinkooladik.tvshows.data.stub.StubActorsRepository
+import com.tinkooladik.tvshows.data.stub.StubFavoritesRepository
 import com.tinkooladik.tvshows.data.stub.StubShowsRepository
 import com.tinkooladik.tvshows.domain.actor.ActorsRepository
 import com.tinkooladik.tvshows.domain.common.ErrorInterceptor
+import com.tinkooladik.tvshows.domain.favorites.FavoritesRepository
 import com.tinkooladik.tvshows.domain.show.ShowsRepository
 import dagger.Binds
 import dagger.Module
@@ -23,4 +25,7 @@ abstract class Bindings {
 
     @Binds
     abstract fun provideShowsRepository(source: StubShowsRepository): ShowsRepository
+
+    @Binds
+    abstract fun provideFavoritesRepository(source: StubFavoritesRepository): FavoritesRepository
 }

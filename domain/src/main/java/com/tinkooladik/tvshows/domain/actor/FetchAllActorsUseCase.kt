@@ -7,6 +7,9 @@ import com.tinkooladik.tvshows.domain.common.ErrorInterceptor
 import com.tinkooladik.tvshows.domain.common.ResultUseCase
 import javax.inject.Inject
 
+/**
+ * Fetch all actors
+ */
 class FetchAllActorsUseCase @Inject constructor(
     private val source: ActorsRepository,
     dispatchers: AppDispatchers,

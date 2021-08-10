@@ -14,7 +14,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 /**
- * Mock data source is used until server is set up
+ * Stub data source is used until server is set up
  */
 @Singleton
 class StubShowsRepository @Inject constructor() : ShowsRepository {
