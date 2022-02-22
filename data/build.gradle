@@ -34,15 +34,15 @@ android {
 dependencies {
     implementation project(":domain")
 
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version_coroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$vers.coroutines"
 
-    implementation "com.michael-bull.kotlin-result:kotlin-result:$version_result"
-    implementation "com.michael-bull.kotlin-result:kotlin-result-coroutines:$version_result"
+    implementation "com.michael-bull.kotlin-result:kotlin-result:$vers.result"
+    implementation "com.michael-bull.kotlin-result:kotlin-result-coroutines:$vers.result"
 
-    implementation "com.google.dagger:hilt-android:$version_hilt"
-    kapt "com.google.dagger:hilt-android-compiler:$version_hilt"
+    implementation "com.google.dagger:hilt-android:$vers.hilt"
+    kapt "com.google.dagger:hilt-android-compiler:$vers.hilt"
 
-    implementation "javax.inject:javax.inject:$version_javax"
+    implementation "javax.inject:javax.inject:$vers.javax"
 
-    implementation "com.jakewharton.timber:timber:$version_timber"
+    implementation "com.jakewharton.timber:timber:$vers.timber"
 }
