@@ -11,8 +11,6 @@ android {
     defaultConfig {
         minSdk buildConfig.minSdk
         targetSdk buildConfig.targetSdk
-        versionCode 1
-        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -35,8 +33,6 @@ android {
 
 dependencies {
     implementation project(":domain")
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$version_kotlin"
 
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version_coroutines"
 
