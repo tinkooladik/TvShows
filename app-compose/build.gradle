@@ -31,7 +31,7 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion version_compose
+        kotlinCompilerExtensionVersion vers.compose
         kotlinCompilerVersion '1.5.10'
     }
     packagingOptions {
@@ -44,23 +44,23 @@ android {
 dependencies {
     implementation project(":common")
 
-    implementation "com.google.dagger:hilt-android:$version_hilt"
-    kapt "com.google.dagger:hilt-android-compiler:$version_hilt"
+    implementation "com.google.dagger:hilt-android:$vers.hilt"
+    kapt "com.google.dagger:hilt-android-compiler:$vers.hilt"
 
-    implementation "androidx.compose.ui:ui:$version_compose"
-    implementation "androidx.compose.material:material:$version_compose"
-    implementation "androidx.compose.ui:ui-tooling-preview:$version_compose"
-    implementation "androidx.activity:activity-compose:$version_activity_compose"
+    implementation "androidx.compose.ui:ui:$vers.compose"
+    implementation "androidx.compose.material:material:$vers.compose"
+    implementation "androidx.compose.ui:ui-tooling-preview:$vers.compose"
+    implementation "androidx.activity:activity-compose:$vers.activity_compose"
 
-    implementation "com.google.accompanist:accompanist-insets:$version_insets"
-    implementation "com.google.accompanist:accompanist-insets-ui:$version_insets"
+    implementation "com.google.accompanist:accompanist-insets:$vers.insets"
+    implementation "com.google.accompanist:accompanist-insets-ui:$vers.insets"
 
-//    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$version_compose"
+//    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$vers.compose"
 //    implementation "androidx.navigation:navigation-compose:2.4.0-alpha06"
 
-    androidTestApi 'androidx.test.ext:junit:1.1.3'
-    androidTestApi "androidx.test.espresso:espresso-core:$version_espresso"
-    androidTestApi "androidx.compose.ui:ui-test-junit4:$version_compose"
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$version_compose"
-    debugImplementation "androidx.compose.ui:ui-tooling:$version_compose"
+    androidTestApi "androidx.test.ext:junit:$vers.junit_android"
+    androidTestApi "androidx.test.espresso:espresso-core:$vers.espresso"
+    androidTestApi "androidx.compose.ui:ui-test-junit4:$vers.compose"
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$vers.compose"
+    debugImplementation "androidx.compose.ui:ui-tooling:$vers.compose"
 }

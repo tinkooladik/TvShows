@@ -1,40 +1,15 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext.buildConfig = [
-            'compileSdk': 31,
-            'minSdk'    : 26,
-            'targetSdk' : 31,
-    ]
-    ext {
-        version_gradle = '7.1.1'
-        version_compose = '1.1.0'
-        version_activity_compose = '1.3.1'
-        version_kotlin = '1.6.10'
-        version_coroutines = '1.4.1'
-        version_appcompat ='1.4.1'
-        version_ktx ='1.7.0'
-        version_material ='1.5.0'
-        version_lifecycle ='2.4.1'
-        version_navigation ='2.4.1'
-        version_fragment ='1.4.1'
-        version_insets ='0.16.0'
-        version_result ='1.1.9'
-        version_hilt ='2.41'
-        version_timber ='4.7.1'
-        version_glide ='4.12.0'
-        version_javax ='1'
-        version_junit ='4.13.2'
-        version_espresso ='3.4.0'
-    }
+    apply from: 'versions.gradle'
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:$version_gradle"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$version_kotlin"
-        classpath "com.google.dagger:hilt-android-gradle-plugin:$version_hilt"
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$version_navigation"
+        classpath "com.android.tools.build:gradle:$vers.gradle"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$vers.kotlin"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$vers.hilt"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$vers.navigation"
     }
 }
 
