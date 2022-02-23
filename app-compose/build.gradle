@@ -55,6 +55,8 @@ dependencies {
     implementation "com.google.accompanist:accompanist-insets:$vers.insets"
     implementation "com.google.accompanist:accompanist-insets-ui:$vers.insets"
 
+    implementation "io.coil-kt:coil-compose:$vers.coil"
+
 //    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$vers.compose"
 //    implementation "androidx.navigation:navigation-compose:2.4.0-alpha06"
 
