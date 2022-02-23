@@ -12,6 +12,8 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <!--TODO add support for white theme -->
+        <item name="android:colorBackground">@color/background</item>
     </style>
 
     <style name="Theme.TvShows.NoActionBar">
