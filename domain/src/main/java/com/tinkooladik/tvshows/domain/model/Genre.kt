@@ -6,5 +6,8 @@ enum class Genre {
     Drama,
     Horror,
     Thriller,
-    Crime
+    Crime,
+    Romance,
+    Supernatural,
+    Fantasy
 }
