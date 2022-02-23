@@ -2,14 +2,15 @@ package com.tinkooladik.tvshows.compose.view.show
 
 import android.content.res.Configuration
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.tinkooladik.tvshows.compose.ui.theme.TvShowsTheme
@@ -26,12 +27,11 @@ fun ShowsList(shows: List<Show>) {
         contentPadding = PaddingValues(vertical = 16.dp, horizontal = 8.dp)
     ) {
         items(shows) { show ->
-            //TODO replace with card view
-            Surface(
-                shape = MaterialTheme.shapes.medium,
-                elevation = 1.dp
+            var isSelected by remember { mutableStateOf(false) }
+            Box(
+                modifier = Modifier.clickable { isSelected = isSelected.not() }
             ) {
-                ShowCard(show = show)
+                ShowCard(show = show, isSelected = isSelected)
             }
         }
     }
