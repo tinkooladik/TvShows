@@ -1,17 +1,24 @@
 package com.tinkooladik.tvshows.compose.view.show
 
 import android.content.res.Configuration
+import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import coil.transform.RoundedCornersTransformation
+import com.tinkooladik.tvshows.compose.ui.theme.CardBackground
+import com.tinkooladik.tvshows.compose.ui.theme.CardBackgroundHighlighted
 import com.tinkooladik.tvshows.compose.ui.theme.TvShowsTheme
 import com.tinkooladik.tvshows.data.stub.StubData
 import com.tinkooladik.tvshows.domain.show.Show
@@ -19,14 +26,22 @@ import java.time.format.DateTimeFormatter
 
 
 @Composable
-fun ShowCard(show: Show) {
-    Column(
-        modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+fun ShowCard(show: Show, isSelected: Boolean = false) {
+    val background: Color by animateColorAsState(
+        targetValue = if (isSelected) CardBackgroundHighlighted else CardBackground
+    )
+    Card(
+        shape = RoundedCornerShape(8.dp),
+        backgroundColor = background
     ) {
-        Spacer(modifier = Modifier.height(8.dp))
-        Poster(show.imageUrl)
-        Spacer(modifier = Modifier.height(8.dp))
-        Captions(show = show)
+        Column(
+            modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+        ) {
+            Spacer(modifier = Modifier.height(8.dp))
+            Poster(show.imageUrl)
+            Spacer(modifier = Modifier.height(8.dp))
+            Captions(show = show)
+        }
     }
 }
 
