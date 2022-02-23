@@ -53,7 +53,10 @@ object StubData {
         ),
     )
 
-    val ACTORS = ACTORS_MONEY_HEIST + ACTORS_ELITE
+    private val ACTORS_VAMPIRE_DIARIES = listOf<Actor>()
+
+    //TODO there should be a single list of actors and Show should have actor ids
+    val ACTORS = ACTORS_MONEY_HEIST + ACTORS_ELITE + ACTORS_VAMPIRE_DIARIES
 
     val SHOWS = listOf(
         Show(
@@ -79,6 +82,59 @@ object StubData {
             seasons = 4,
             episodes = 32,
             imageUrl = "https://citaty.info/files/posters/214160.jpg"
+        ),
+        Show(
+            id = 2,
+            title = "Vampire Diaries",
+            releaseDate = LocalDate.of(2009, 9, 10),
+            actors = ACTORS_VAMPIRE_DIARIES,
+            country = Country.UnitedStates,
+            genres = listOf(
+                Genre.Romance,
+                Genre.Thriller,
+                Genre.Drama,
+                Genre.Horror,
+                Genre.Supernatural,
+                Genre.Fantasy
+            ),
+            rating = Rating(7.7),
+            seasons = 8,
+            episodes = 171,
+            imageUrl = "https://m.media-amazon.com/images/M/MV5BMDk3YzgxNDQtNTEzOS00NDMyLWFlYmYtYTZlMDk1NDkxNmMyXkEyXkFqcGdeQXVyNzA5NjUyNjM@._V1_FMjpg_UX1000_.jpg"
+        ),
+        Show(
+            id = 3,
+            title = "Originals",
+            releaseDate = LocalDate.of(2013, 10, 3),
+            actors = ACTORS_VAMPIRE_DIARIES,
+            country = Country.UnitedStates,
+            genres = listOf(
+                Genre.Drama,
+                Genre.Horror,
+                Genre.Supernatural,
+                Genre.Fantasy
+            ),
+            rating = Rating(8.2),
+            seasons = 5,
+            episodes = 92,
+            imageUrl = "https://www.tvguide.com/a/img/catalog/provider/1/1/1-6018506677.jpg"
+        ),
+        Show(
+            id = 4,
+            title = "Legacies",
+            releaseDate = LocalDate.of(2018, 10, 25),
+            actors = ACTORS_VAMPIRE_DIARIES,
+            country = Country.UnitedStates,
+            genres = listOf(
+                Genre.Drama,
+                Genre.Horror,
+                Genre.Supernatural,
+                Genre.Fantasy
+            ),
+            rating = Rating(7.4),
+            seasons = 4,
+            episodes = 57,
+            imageUrl = "https://static.wikia.nocookie.net/thecw/images/f/f9/Season_4_%28Legacies%29.jpg/revision/latest?cb=20211002010115"
         )
     )
 }
