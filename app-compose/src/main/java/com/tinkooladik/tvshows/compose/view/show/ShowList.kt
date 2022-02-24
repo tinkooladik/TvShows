@@ -44,7 +44,7 @@ fun ShowsList(shows: List<Show>) {
     name = "Dark Mode"
 )
 @Composable
-fun PreviewShowList() {
+private fun PreviewShowList() {
     TvShowsTheme {
         ShowsList(shows = StubData.SHOWS)
     }
