@@ -2,6 +2,8 @@ package com.tinkooladik.tvshows.compose.view.show
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -13,9 +15,17 @@ import com.tinkooladik.tvshows.data.stub.StubData
 import com.tinkooladik.tvshows.domain.show.Show
 
 @Composable
-fun ShowPage(show: Show) {
-    Column(modifier = Modifier, horizontalAlignment = Alignment.CenterHorizontally) {
-        ShowPoster(url = show.imageUrl, modifier = Modifier.width(200.dp))
+fun ShowPage(show: Show, modifier: Modifier = Modifier) {
+    Column(
+        modifier = modifier.fillMaxWidth(),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        ShowPoster(
+            url = show.imageUrl,
+            modifier = Modifier
+                .width(200.dp)
+                .padding(top = 16.dp)
+        )
     }
 }
 

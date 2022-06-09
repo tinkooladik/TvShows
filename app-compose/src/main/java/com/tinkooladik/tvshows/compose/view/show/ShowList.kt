@@ -19,12 +19,13 @@ import com.tinkooladik.tvshows.domain.show.Show
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun ShowsList(shows: List<Show>) {
+fun ShowsList(shows: List<Show>, modifier: Modifier = Modifier) {
     LazyVerticalGrid(
         cells = GridCells.Fixed(2),
         horizontalArrangement = Arrangement.spacedBy(8.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp),
-        contentPadding = PaddingValues(vertical = 16.dp, horizontal = 8.dp)
+        contentPadding = PaddingValues(vertical = 16.dp, horizontal = 8.dp),
+        modifier = modifier
     ) {
         items(shows) { show ->
             var isSelected by remember { mutableStateOf(false) }

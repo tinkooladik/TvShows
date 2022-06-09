@@ -24,13 +24,14 @@ import java.time.format.DateTimeFormatter
 val dateFormat: DateTimeFormatter = DateTimeFormatter.ofPattern("MMM yyyy")
 
 @Composable
-fun ShowCard(show: Show, isSelected: Boolean = false) {
+fun ShowCard(show: Show, modifier: Modifier = Modifier, isSelected: Boolean = false) {
     val background: Color by animateColorAsState(
         targetValue = if (isSelected) CardBackgroundHighlighted else CardBackground
     )
     Card(
         shape = RoundedCornerShape(8.dp),
-        backgroundColor = background
+        backgroundColor = background,
+        modifier = modifier
     ) {
         Column(
             modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
@@ -44,8 +45,8 @@ fun ShowCard(show: Show, isSelected: Boolean = false) {
 }
 
 @Composable
-private fun Captions(show: Show) {
-    Column(modifier = Modifier.fillMaxWidth()) {
+private fun Captions(show: Show, modifier: Modifier = Modifier) {
+    Column(modifier = modifier.fillMaxWidth()) {
         Text(text = show.title, style = MaterialTheme.typography.h3)
         Spacer(modifier = Modifier.height(8.dp))
         Row(
